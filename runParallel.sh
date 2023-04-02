@@ -17,7 +17,8 @@ threads=(1 2 4 8 16 32)
 
 #Loop through each value of OMP_NUM_THREADS
 for thread in ${threads[@]}; do
-        echo "############# VEC NITI #############"
+        echo "############# ST NITI $thread #############" 
+
         # Set the value of OMP_NUM_THREADS
         export OMP_NUM_THREADS=$thread
         

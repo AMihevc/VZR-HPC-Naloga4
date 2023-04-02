@@ -1,0 +1,121 @@
+############# ST NITI 1 #############
+Elapsed time: 16.674807
+
+ Performance counter stats for './sievepar 1000000000':
+
+     1,155,066,532      cache-references:u                                            (71.36%)
+       997,605,981      cache-misses:u            #   86.368 % of all cache refs      (71.39%)
+    37,503,645,851      cycles:u                                                      (28.64%)
+    32,193,218,160      stalled-cycles-backend:u  #   85.84% backend cycles idle      (28.61%)
+    15,287,442,319      instructions:u            #    0.41  insn per cycle         
+                                                  #    2.11  stalled cycles per insn  (42.88%)
+     3,560,769,146      branches:u                                                    (57.14%)
+            96,112      branch-misses:u           #    0.00% of all branches          (71.42%)
+
+      16.996038848 seconds time elapsed
+
+      16.340434000 seconds user
+       0.224048000 seconds sys
+
+
+############# ST NITI 2 #############
+Elapsed time: 10.137659
+
+ Performance counter stats for './sievepar 1000000000':
+
+     1,155,368,759      cache-references:u                                            (71.36%)
+       961,829,895      cache-misses:u            #   83.249 % of all cache refs      (71.39%)
+    41,856,655,495      cycles:u                                                      (28.64%)
+    36,101,588,973      stalled-cycles-backend:u  #   86.25% backend cycles idle      (28.61%)
+    15,302,347,150      instructions:u            #    0.37  insn per cycle         
+                                                  #    2.36  stalled cycles per insn  (42.88%)
+     3,563,987,728      branches:u                                                    (57.14%)
+           124,635      branch-misses:u           #    0.00% of all branches          (71.41%)
+
+      10.461855586 seconds time elapsed
+
+      18.231841000 seconds user
+       0.531629000 seconds sys
+
+
+############# ST NITI 4 #############
+Elapsed time: 7.177952
+
+ Performance counter stats for './sievepar 1000000000':
+
+     1,154,928,041      cache-references:u                                            (71.37%)
+       917,128,812      cache-misses:u            #   79.410 % of all cache refs      (71.39%)
+    54,441,864,978      cycles:u                                                      (28.63%)
+    48,890,682,332      stalled-cycles-backend:u  #   89.80% backend cycles idle      (28.62%)
+    15,305,448,647      instructions:u            #    0.28  insn per cycle         
+                                                  #    3.19  stalled cycles per insn  (42.89%)
+     3,567,236,651      branches:u                                                    (57.15%)
+           170,916      branch-misses:u           #    0.00% of all branches          (71.42%)
+
+       7.521108054 seconds time elapsed
+
+      23.706384000 seconds user
+       0.796094000 seconds sys
+
+
+############# ST NITI 8 #############
+Elapsed time: 7.849247
+
+ Performance counter stats for './sievepar 1000000000':
+
+     1,153,846,377      cache-references:u                                            (71.36%)
+       940,490,818      cache-misses:u            #   81.509 % of all cache refs      (71.40%)
+   100,406,285,565      cycles:u                                                      (28.64%)
+    94,465,793,964      stalled-cycles-backend:u  #   94.08% backend cycles idle      (28.61%)
+    15,297,369,827      instructions:u            #    0.15  insn per cycle         
+                                                  #    6.18  stalled cycles per insn  (42.88%)
+     3,564,963,993      branches:u                                                    (57.14%)
+           295,999      branch-misses:u           #    0.01% of all branches          (71.41%)
+
+       8.173237159 seconds time elapsed
+
+      43.694668000 seconds user
+       1.806989000 seconds sys
+
+
+############# ST NITI 16 #############
+Elapsed time: 6.432804
+
+ Performance counter stats for './sievepar 1000000000':
+
+     1,152,937,663      cache-references:u                                            (71.37%)
+       915,960,989      cache-misses:u            #   79.446 % of all cache refs      (71.41%)
+   183,255,682,069      cycles:u                                                      (28.64%)
+   173,572,868,730      stalled-cycles-backend:u  #   94.72% backend cycles idle      (28.60%)
+    15,335,424,799      instructions:u            #    0.08  insn per cycle         
+                                                  #   11.32  stalled cycles per insn  (42.87%)
+     3,585,931,425      branches:u                                                    (57.14%)
+           546,511      branch-misses:u           #    0.02% of all branches          (71.42%)
+
+       6.754882589 seconds time elapsed
+
+      79.694116000 seconds user
+       2.761578000 seconds sys
+
+
+############# ST NITI 32 #############
+Elapsed time: 7.037430
+
+ Performance counter stats for './sievepar 1000000000':
+
+     1,156,314,645      cache-references:u                                            (71.33%)
+     1,034,594,602      cache-misses:u            #   89.473 % of all cache refs      (71.38%)
+   380,224,855,249      cycles:u                                                      (28.67%)
+   195,070,595,339      stalled-cycles-backend:u  #   51.30% backend cycles idle      (28.63%)
+    15,649,757,578      instructions:u            #    0.04  insn per cycle         
+                                                  #   12.46  stalled cycles per insn  (42.89%)
+     3,651,386,803      branches:u                                                    (57.14%)
+         1,185,039      branch-misses:u           #    0.03% of all branches          (71.40%)
+
+       7.370549317 seconds time elapsed
+
+     165.618198000 seconds user
+       6.734677000 seconds sys
+
+
+Konec
