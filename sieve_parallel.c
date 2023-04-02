@@ -15,7 +15,7 @@ int main(int argc, char** argv) {
 
     if (argc < 2) {
         printf("Usage: ./primes N\n");
-        exit(1);
+        return 1;
     }
 
     const int n = atoi(argv[1]);
@@ -25,16 +25,21 @@ int main(int argc, char** argv) {
     memset(primes, 1, (n+1));
 
     //printf("tuki sm ");
-  
+
+    //start time 
+    double start = omp_get_wtime();  
     #pragma omp parallel
     {
         int thread_id = omp_get_thread_num();
         int num_threads = omp_get_num_threads();
         int block_zero_size = sqrt(n);
         int block_size = (n - block_zero_size) / num_threads;
-        int block_start =(block_zero_size -1) + (thread_id * block_size);
-        int block_end = block_start + block_size -1;
-        if (block_end > n) block_end = n;   
+        int block_start =(block_zero_size) + (thread_id * block_size);
+        int block_end = block_start + block_size;
+        if (block_end > n) block_end = n;
+        // if i am the last thread, i have to take care of the rest of the numbers
+        if (thread_id == num_threads - 1) block_end = n;
+        //printf("thread_id: %d, num_threads: %d, block_zero_size: %d, block_size: %d, block_start: %d, block_end: %d\n", thread_id, num_threads, block_zero_size, block_size, block_start, block_end); 
         
         // nit 0 obdela prvih sqrt(N) števil 
         if (thread_id == 0){
@@ -54,7 +59,6 @@ int main(int argc, char** argv) {
         // ko nit nic zakljuci lahko obdelamo se ostale odseke od sqrt(N) do N
 
         //pogledaš v prvem segmentu keri so primes
-        #pragma omp for
         for (int p = 2; p <= (int)block_zero_size; p++) {
             if(primes[p]){
                 //če je prime potem pogledaš vse večkratnike v svojem segmentu
@@ -66,19 +70,24 @@ int main(int argc, char** argv) {
         
     }
 
-    #pragma omp barrier
+
     //na koncu še preštejemo število praštevil
-    print_is_prime(primes, n);
-    int num_primes = 0;
-    for (int i = 2; i <= n; i++) {
-        if (primes[i]) {
-        num_primes++;
-        }
+    unsigned int totalPrimes=0;
+    #pragma omp parallel for reduction(+:totalPrimes)
+    for (int p = 2; p <= n; p++) 
+        if (primes[p])
+            totalPrimes++;
+    
+    //end time
+    double end = omp_get_wtime();
+    if (n == 1000000000 & totalPrimes != 50847534){
+        printf("WRONG NUMBER OF PRIMES @%d threds: %d ",omp_get_num_threads(),  totalPrimes);
     }
+    //printf("Total primes less or equal to %d: %d\n",n,totalPrimes);
+    printf("Elapsed time: %f\n",end-start);
+    
+    //print_is_prime(primes, n);
 
-
-
-    printf("Number of primes <= %d: %d\n", n, num_primes);
     free(primes);
     return 0;
 }

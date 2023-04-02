@@ -7,6 +7,13 @@
 #include <stdlib.h>
 #include <omp.h>
 
+void print_is_prime(char* is_prime, int N) {
+  printf("is_prime:\n");
+  for (int i = 0; i <= N; i++) {
+    printf("%d: %d\n", i, is_prime[i]);
+  }
+}
+
 void SieveOfEratosthenes(int n)
 {
     //Initialize the array of flags for the primes
@@ -42,17 +49,17 @@ void SieveOfEratosthenes(int n)
     #pragma omp parallel
     {
         int id=omp_get_thread_num();
-        #pragma omp for
+        #pragma omp for reduction(+:totalPrimes)
         for (int p = 2; p <= n; p++) 
             if (primes[p])
-                prime_cnts[id]++;
+                totalPrimes++;
                 
             // namest tega if napišeš 
             // prime_cnts[id]+= primes[p];
 
             /*
             če maš kle 
-            if(p%2==0)
+            if(p%2==0)s
                 prime_cnts[id]++;
             
             in poženeš
@@ -72,14 +79,16 @@ void SieveOfEratosthenes(int n)
     
     }
     //seštej delne rezultate
-    for(int i=0; i<omp_get_max_threads(); i++)
-    {
-        totalPrimes+=prime_cnts[i];
-    }
+    // for(int i=0; i<omp_get_max_threads(); i++)
+    // {
+    //     totalPrimes+=prime_cnts[i];
+    // }
+
+    //print_is_prime(primes, n);
 
     double stop=omp_get_wtime();
     printf("Total primes less or equal to %d: %d\n",n,totalPrimes);
-    printf("Elapsed time: %.3f\n",stop-start);
+    printf("Elapsed time: %f\n",stop-start);
     free(primes);
     free(prime_cnts);
 }
