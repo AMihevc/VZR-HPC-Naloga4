@@ -10,7 +10,7 @@
 #Zazeni z: sbatch --reservation=fri ./runParallel.sh
 
 #prevedi program da bos imel za ziher neki za izvajat
-gcc -O2 sieve_parallel.c -o sievepar -lm -fopenmp
+gcc -O2 sieveParalel.c -o sievepar -lm -fopenmp
 
 #Define an array of values for OMP_NUM_THREADS
 threads=(1 2 4 8 16 32)
@@ -23,7 +23,7 @@ for thread in ${threads[@]}; do
         export OMP_NUM_THREADS=$thread
         
         # Run the program
-        srun perf stat -B -e cache-references,cache-misses,cycles,stalled-cycles-backend,instructions,branches,branch-misses ./sievepar 1000000000
+        srun perf stat -B -e cache-references,cache-misses,cycles,stalled-cycles-backend,instructions,branches,branch-misses ./sievepar 1000000
         
     done
 
