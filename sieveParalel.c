@@ -11,19 +11,6 @@ void print_is_prime(char* is_prime, int N) {
   }
 }
 
-int sieveInBlock(int block_start, int block_end, int block_zero_size, unsigned char * primes) {
-
-    for (int p = 2; p * p <= block_zero_size; p++) {
-        if (primes[p]) {
-            for (int i = fmax(p * p, (block_start + p - 1) / p * p); i <= block_end; i += p) {
-                primes[i] = 0;
-            }
-        }
-    }
-
-    return 0;
-}
-
 
 int main(int argc, char** argv) {
 
@@ -43,7 +30,7 @@ int main(int argc, char** argv) {
     memset(primes, 1, (n+1));
 
     int block_zero_size = sqrt(n);
-    int block_size = 32000; 
+    int block_size = 30000; 
 
     //start time
     double start = omp_get_wtime();
@@ -58,21 +45,6 @@ int main(int argc, char** argv) {
             }
         }
     }
-
-    //make a list of the primes in the first block
-    // int num_primes_in_block_zero = 0;
-    // #pragma omp for reduction(+:num_primes_in_block_zero)
-    // for (int p = 2; p <= block_zero_size; p++) 
-    //     if (primes[p])
-    //         num_primes_in_block_zero++;
-
-    // int * primes_in_block_zero = (int *)malloc(num_primes_in_block_zero * sizeof(int));
-
-    // //fill the list of primes in the first block
-    // int index = 0;
-    // for (int p = 2; p <= block_zero_size; p++) 
-    //     if (primes[p])
-    //         primes_in_block_zero[index++] = p;
 
     //go through the rest of the blocks
     #pragma omp parallel for schedule(guided)
@@ -94,9 +66,6 @@ int main(int argc, char** argv) {
                 }
             }
         }
-    
-        // call siveiInBlock
-        // int rez = sieveInBlock(block_start, block_end, block_zero_size, primes);
     }
 
 

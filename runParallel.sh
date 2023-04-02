@@ -23,7 +23,7 @@ for thread in ${threads[@]}; do
         export OMP_NUM_THREADS=$thread
         
         # Run the program
-        srun perf stat -B -e cache-references,cache-misses,cycles,stalled-cycles-backend,instructions,branches,branch-misses ./sievepar 1000000
+        srun perf stat -B -e cache-references,cache-misses,cycles,stalled-cycles-backend,instructions,branches,branch-misses ./sievepar 1000000000
         
     done
 
