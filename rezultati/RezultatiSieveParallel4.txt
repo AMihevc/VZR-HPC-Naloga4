@@ -1,0 +1,127 @@
+############# ST NITI 1 #############
+Total primes less or equal to 1000000000: 50847534
+Elapsed time: 11.900440
+
+ Performance counter stats for './sievepar 1000000000':
+
+       871,039,846      cache-references:u                                            (71.37%)
+         4,205,962      cache-misses:u            #    0.483 % of all cache refs      (71.40%)
+    27,074,966,811      cycles:u                                                      (28.63%)
+    12,718,301,162      stalled-cycles-backend:u  #   46.97% backend cycles idle      (28.60%)
+    27,251,172,692      instructions:u            #    1.01  insn per cycle         
+                                                  #    0.47  stalled cycles per insn  (42.88%)
+     6,422,573,932      branches:u                                                    (57.14%)
+       147,693,073      branch-misses:u           #    2.30% of all branches          (71.41%)
+
+      12.222477668 seconds time elapsed
+
+      11.778649000 seconds user
+       0.228955000 seconds sys
+
+
+############# ST NITI 2 #############
+Total primes less or equal to 1000000000: 50847534
+Elapsed time: 6.186273
+
+ Performance counter stats for './sievepar 1000000000':
+
+       873,127,727      cache-references:u                                            (71.36%)
+         4,575,619      cache-misses:u            #    0.524 % of all cache refs      (71.39%)
+    27,129,117,660      cycles:u                                                      (28.64%)
+    12,875,655,120      stalled-cycles-backend:u  #   47.46% backend cycles idle      (28.61%)
+    27,268,025,031      instructions:u            #    1.01  insn per cycle         
+                                                  #    0.47  stalled cycles per insn  (42.88%)
+     6,423,013,802      branches:u                                                    (57.14%)
+       147,980,762      branch-misses:u           #    2.30% of all branches          (71.41%)
+
+       6.508519054 seconds time elapsed
+
+      11.825545000 seconds user
+       0.462148000 seconds sys
+
+
+############# ST NITI 4 #############
+Total primes less or equal to 1000000000: 50847534
+Elapsed time: 3.129789
+
+ Performance counter stats for './sievepar 1000000000':
+
+       871,451,038      cache-references:u                                            (71.36%)
+         4,612,407      cache-misses:u            #    0.529 % of all cache refs      (71.39%)
+    27,264,688,027      cycles:u                                                      (28.64%)
+    12,891,237,501      stalled-cycles-backend:u  #   47.28% backend cycles idle      (28.62%)
+    27,237,371,196      instructions:u            #    1.00  insn per cycle         
+                                                  #    0.47  stalled cycles per insn  (42.89%)
+     6,423,445,619      branches:u                                                    (57.15%)
+       148,073,385      branch-misses:u           #    2.31% of all branches          (71.41%)
+
+       3.459350099 seconds time elapsed
+
+      11.863198000 seconds user
+       0.357289000 seconds sys
+
+
+############# ST NITI 8 #############
+Total primes less or equal to 1000000000: 50847534
+Elapsed time: 1.574877
+
+ Performance counter stats for './sievepar 1000000000':
+
+       872,410,270      cache-references:u                                            (71.31%)
+         4,572,371      cache-misses:u            #    0.524 % of all cache refs      (71.36%)
+    27,307,607,477      cycles:u                                                      (28.69%)
+    12,920,042,261      stalled-cycles-backend:u  #   47.31% backend cycles idle      (28.65%)
+    27,258,687,179      instructions:u            #    1.00  insn per cycle         
+                                                  #    0.47  stalled cycles per insn  (42.89%)
+     6,419,584,368      branches:u                                                    (57.12%)
+       147,855,098      branch-misses:u           #    2.30% of all branches          (71.40%)
+
+       1.901744822 seconds time elapsed
+
+      11.923334000 seconds user
+       0.353509000 seconds sys
+
+
+############# ST NITI 16 #############
+Total primes less or equal to 1000000000: 50847534
+Elapsed time: 0.807967
+
+ Performance counter stats for './sievepar 1000000000':
+
+       873,172,016      cache-references:u                                            (71.24%)
+         4,841,867      cache-misses:u            #    0.555 % of all cache refs      (71.33%)
+    28,781,063,691      cycles:u                                                      (28.76%)
+    13,780,565,823      stalled-cycles-backend:u  #   47.88% backend cycles idle      (28.68%)
+    27,318,910,451      instructions:u            #    0.95  insn per cycle         
+                                                  #    0.50  stalled cycles per insn  (42.91%)
+     6,447,543,881      branches:u                                                    (57.12%)
+       148,556,938      branch-misses:u           #    2.30% of all branches          (71.33%)
+
+       1.129799140 seconds time elapsed
+
+      12.527309000 seconds user
+       0.223137000 seconds sys
+
+
+############# ST NITI 32 #############
+Total primes less or equal to 1000000000: 50847534
+Elapsed time: 0.606687
+
+ Performance counter stats for './sievepar 1000000000':
+
+       881,884,160      cache-references:u                                            (71.28%)
+         6,940,450      cache-misses:u            #    0.787 % of all cache refs      (71.41%)
+    37,863,601,686      cycles:u                                                      (28.74%)
+     8,200,681,845      stalled-cycles-backend:u  #   21.66% backend cycles idle      (28.66%)
+    27,382,493,426      instructions:u            #    0.72  insn per cycle         
+                                                  #    0.30  stalled cycles per insn  (42.92%)
+     6,468,499,272      branches:u                                                    (57.11%)
+       153,546,744      branch-misses:u           #    2.37% of all branches          (71.32%)
+
+       0.928010958 seconds time elapsed
+
+      16.506594000 seconds user
+       0.222073000 seconds sys
+
+
+Konec
